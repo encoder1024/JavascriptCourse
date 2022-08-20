@@ -1,20 +1,44 @@
-// @ts-check
-let continuar = true;
-let luckyNumber = Math.floor((Math.random() * 100) + 1);
-console.log(luckyNumber);
+let puntosCompu = 0;
+let puntosUsuario = 0;
 
-do{
-  let guest = parseInt(prompt("Adivina el número entre 1 y 100...") || "0");
-  if( guest > 0 && guest <= 100){
-    if (guest == luckyNumber) {
-      console.log("Adivinaste!!! Eres libre!!!");
-      continuar = false;
-    } else if( guest > luckyNumber){
-      console.log("Tú número " + guest + " es alto");
-    } else {
-      console.log("Tú número " + guest + " es bajo");
-    }
+for (let i=0; i < 5; i++) {
+  let luckyNumber = Math.floor(Math.random() * 3);
+
+  if (luckyNumber == 0) {
+      luckyNumber = 'piedra';
+  } else if (luckyNumber == 1) {
+      luckyNumber = 'papel';
   } else {
-    console.log("ingresa un número entre 1 y 100 por favor... será más fácil...");
+      luckyNumber = 'tijera';
   }
-} while(continuar);
+
+  let jugador = prompt('piedra papel o tijera?')
+
+  if (jugador !== 'piedra' && jugador !== 'papel' && jugador !== 'tijera') {
+      alert('Volve a elegir correctamente!')
+  } else if (jugador == 'piedra' && luckyNumber == 'tijera') {
+      alert('Felicitaciones ganaste! elegiste ' + jugador + ' y ' + 'la computadora eligio ' + luckyNumber);
+      puntosUsuario++;
+  } else if (jugador == 'tijera' && luckyNumber == 'papel') {
+      alert('Felicitaciones ganaste! elegiste ' + jugador + ' y ' + 'la computadora eligio ' + luckyNumber);
+      puntosUsuario++;
+  } else if (jugador == 'papel' && luckyNumber == 'piedra') {
+      alert('Felicitaciones ganaste! hiciste ' + jugador + ' y ' + 'la computadora eligio ' + luckyNumber);
+      puntosUsuario++;
+  } else if (jugador == luckyNumber) {
+      alert('Empate. Elegiste ' + jugador + ' y ' + 'la computadora eligio ' + luckyNumber);
+  } else {
+      alert('perdiste :(. Elegiste ' + jugador + ' y ' + 'la computadora eligio ' + luckyNumber);
+      puntosCompu++;
+  }
+}
+
+if(puntosCompu > puntosUsuario) {
+  alert("("+puntosCompu+" a "+ puntosUsuario +") -> Te ha ganado una vez más una simple máquina que solo suma... pero suma muy muy rápido!!!");
+} else if( puntosCompu < puntosUsuario) {
+  alert("Felicitaciones!!! eres un maestro del kunfu!!! ... ganaste por " + (puntosUsuario-puntosCompu));
+} else {
+  alert("("+puntosCompu+" a "+ puntosUsuario +") ->Empataste con una máquina... mal de muchos, consuelo de tontos...vuelve a intentar!!!");
+}
+
+
