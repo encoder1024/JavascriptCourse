@@ -3,11 +3,12 @@ let puntosUsuario = 0;
 let nombreUsuario = "";
 
 function solicitarNombreUsuario() {
+  let userName = "";
   do{
-    let userName = prompt("Ingresa tu nombre antes de competir:");
-  } while (userName != null && userName.lenght() > 3)
+    userName = prompt("Ingresa tu nombre antes de competir:");
+  } while (userName == null || !isNaN(userName))
 
-  alert("Bienvenido " + userName + "!!! .... te voy a ganar! ... pulsa aceptar por favor...");
+  alert("Bienvenido " + userName + "!!! .... te voy a ganar! ... pulsa aceptar, es al mejor de 5...");
   nombreUsuario = userName;
 }
 
@@ -15,6 +16,8 @@ solicitarNombreUsuario();
 
 for (let i=0; i < 5; i++) {
   let luckyNumber = Math.floor(Math.random() * 3);
+
+  
 
   if (luckyNumber == 0) {
       luckyNumber = "piedra";
@@ -24,10 +27,10 @@ for (let i=0; i < 5; i++) {
       luckyNumber = "tijera";
   }
 
-  let jugador = prompt("piedra papel o tijera?")
+  let jugador = prompt("piedra, papel o tijera?")
 
   if (jugador !== "piedra" && jugador !== "papel" && jugador !== "tijera") {
-      alert("Volve a elegir correctamente!")
+      alert("Volver a elegir correctamente!, este intento se anula para ambos.")
   } else if (jugador == "piedra" && luckyNumber == "tijera") {
       alert("Felicitaciones "+ nombreUsuario +" ganaste! elegiste " + jugador + " y " + "la computadora eligio " + luckyNumber);
       puntosUsuario++;
@@ -39,10 +42,14 @@ for (let i=0; i < 5; i++) {
       puntosUsuario++;
   } else if (jugador == luckyNumber) {
       alert("Empate. Elegiste " + jugador + " y " + "la computadora eligio " + luckyNumber);
+      console.log("*empate*")
   } else {
       alert("perdiste :(. Elegiste " + jugador + " y " + "la computadora eligio " + luckyNumber);
       puntosCompu++;
   }
+
+  console.log(i +"-"+ puntosCompu +"-"+ puntosUsuario);
+  
 }
 
 if(puntosCompu > puntosUsuario) {
