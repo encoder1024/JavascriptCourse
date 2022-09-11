@@ -6,15 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Clase 3 | Comisión 38035</title>
+    <title>Clase 8 | Comisión 38035</title>
   </head>
   <body>
-    <h1><span>Tercer Desafío: Piedra, Papael o Tijera!!!</span></h1>
-    <hr/>
-    <h2>Arrays</h2>
-    <p>1-incorporar al menos un arrays en tu proyecto</p>
-    <p>2-Utilizar algún metodo o propiedad visto en la clase</p>
+    <header id="header" class="encabezado">
+      <h1><span>Cuarto Desafío: Piedra, Papel o Tijera!!!</span></h1>
+      <hr/>
+      <h2>DOM & Events</h2>
+      <p>1-Tomar datos desde el DOM y modificar el DOM en función de estos datos</p>
+      <p>2-Utilizar algún evento y actualizar o modificar el DOM luego de un cálculo o proceso</p>
+      <hr/>
+    </header>
+    <main id="main" class="principal">
+      <h1>Argentina Año Verde: Piedra, Papel o Tijera</h1>
+      <section id="menu" class="menuGeneral">
+        <!-- botones: home, juegos, nosotros -->
+        <ul>
+          <li>home</li>
+          <li>juegos</li>
+          <li>nosotros</li>
+        </ul>
+      </section>
+      <section id="config" class="configJuego">
+        <div>
+          <!-- botones: iniciar/pausar, reset, salir -->
+          <button>iniciar</button>
+          <button type="reset">reset</button>
+          <button>terminar</button>
+        </div>
+        <div>
+          <!-- combobox: automático / manual -->
+          <label><input type="checkbox" id="auto-man" value="man" checked="true"> Elegir en manual</label>
+          <!-- combobox: (user vs pc) or (pc vs pc) -->
+          <label><input type="checkbox" id="versus" value="uspc" checked="true"> Jugar contra la computadora</label>        
+          <!-- combobox: estaditicas: none, basic or full -->
+          <select name="estadisticas">
+            <option value="value1">Ninguna</option>
+            <option value="value2" selected>Basicas</option>
+            <option value="value3">Completas</option>
+          </select>
+        </div>
+        <div>
+          <!-- input: nombre, velocidad de juego, cantidad de intentos -->
+          
+        </div>
+      </section>
+      <section id="tablero" calss="tableroJuego">
+        <div>
+          <!-- botones accion: elegir piedra, papel o tijera-->
+        </div>
+        <div id="display" class="pantalla">
+          <img src="" alt="elección del usuario" id="pickUser">
+          <img src="" alt="elección de la computadora" id="pickCompu">
+        </div>
+      </section>
+    </main>
+    <footer id="results" class="resultados">
+      <!-- Mostrar estadisticas y los resultados al terminar el juego -->
+    </footer>
 
-    <script src="./js/main.js"></script>
+
+    <!-- <script src="./js/main.js"></script> -->
   </body>
 </html>
