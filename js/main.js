@@ -1,5 +1,5 @@
 let puntosCompu = 0;
-let puntosUsuario = 0;
+/* let puntosUsuario = 0; */
 
 let opciones = ["piedra","papel","tijera"];
 
