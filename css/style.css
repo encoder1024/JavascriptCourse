@@ -13,5 +13,17 @@ span {
     font-style: italic;
 }
 
+.config{
+  display: flex;
+  flex-direction: column;
+}
 
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
 
+.pantalla{
+  display: flex;
+  flex-direction: row;
+}
