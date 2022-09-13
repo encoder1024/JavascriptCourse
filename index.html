@@ -32,8 +32,8 @@
         <div class="comandos">
           <!-- botones: iniciar/pausar, reset, salir -->
           <button>iniciar</button>
-          <button type="reset">reset</button>
-          <button>terminar</button>
+          <button type="reset" id="resetGeneral">reset</button>
+          <button id="terminar">terminar</button>
         </div>
         <div class="config">
           <!-- combobox: automático / manual -->
@@ -58,14 +58,14 @@
       <section id="tablero" calss="tableroJuego">
         <div>
           <!-- botones accion: elegir piedra, papel o tijera-->
-          <button>piedra</button>
-          <button>papel</button>
-          <button>tijera</button>
+          <button id="piedra">piedra</button>
+          <button id="papel">papel</button>
+          <button id="tijera">tijera</button>
         </div>
         <div id="display" class="pantalla">
           <div>
             <h3>Usuario</h3>
-            <img src="./img/piedra.png" alt="elección del usuario" id="pickUser">
+            <img src="./img/papel.png" alt="elección del usuario" id="pickUser">
           </div>
           <div>
             <h3>Computadora</h3>
@@ -76,9 +76,10 @@
     </main>
     <footer id="results" class="resultados">
       <!-- Mostrar estadisticas y los resultados al terminar el juego -->
+      <p id="resultadosInstantaneos">Aquí verás los resultados de cada intento...</p>
     </footer>
 
 
-    <!-- <script src="./js/main.js"></script> -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
