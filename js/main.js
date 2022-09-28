@@ -29,6 +29,9 @@ reset.onclick = () => {
   userName.value = "";
   i=1;
   results.innerText = "Aquí verás los resultados de cada intento..."
+  usuarioPrincipal.resultados.length = 0;
+  usuarioPrincipal.puntaje = 0;
+  puntosCompu = 0;
 }
 
 terminar.onclick = () => {
